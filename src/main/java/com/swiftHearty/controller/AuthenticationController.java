@@ -7,6 +7,7 @@ import com.swiftHearty.dto.response.CreateNewUserResponse;
 import com.swiftHearty.dto.response.UserLoginResponse;
 import com.swiftHearty.services.SecurityPersonnelService;
 import com.swiftHearty.services.TenantService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,13 +26,13 @@ public class AuthenticationController {
 
 
     @PostMapping("/newTenant")
-    public ResponseEntity<?> createNewTenant(@RequestBody CreateNewTenantRequest newTenantRequest) {
+    public ResponseEntity<?> createNewTenant( @Valid @RequestBody CreateNewTenantRequest newTenantRequest) {
                 CreateNewUserResponse response = tenantService.registerNewTenant(newTenantRequest);
                 return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/newSecurity")
-    public ResponseEntity<?> createNewSecurityPersonnel(@RequestBody CreateNewSecurityPersonnelRequest newSecurityPersonnelRequest) {
+    public ResponseEntity<?> createNewSecurityPersonnel(@Valid @RequestBody CreateNewSecurityPersonnelRequest newSecurityPersonnelRequest) {
                 CreateNewUserResponse response = securityPersonnelService.registerNewSecurityPersonnel(newSecurityPersonnelRequest);
                 return new ResponseEntity<>(response, HttpStatus.OK);
     }

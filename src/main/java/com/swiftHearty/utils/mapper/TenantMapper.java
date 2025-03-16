@@ -31,6 +31,7 @@ public class TenantMapper {
         loginResponse.setFirstName(tenant.getFirstName());
         loginResponse.setLastName(tenant.getLastName());
         loginResponse.setPhoneNumber(tenant.getPhoneNumber());
+        loginResponse.setApartmentId(tenant.getApartmentId());
         loginResponse.setSuccess(true);
         return loginResponse;
     }

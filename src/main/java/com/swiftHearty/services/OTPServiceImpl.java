@@ -86,6 +86,8 @@ public class OTPServiceImpl implements  OTPService{
         String fullName = String.join(" ", request.getFirstName(),request.getLastName());
         otpRecord.setUserFullName(fullName);
         otpRecord.setUsed(false);
+        otpRecord.setVisitorName(request.getVisitorName());
+        otpRecord.setApartmentId(request.getApartmentId());
         otpRecord.setCode(OTP);
         otpRecord.setExpirationTime(expirationTime);
         otpRecord.setUserPhoneNumber(request.getPhoneNumber());

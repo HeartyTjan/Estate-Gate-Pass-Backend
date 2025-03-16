@@ -15,7 +15,9 @@ public class OTP {
     private String code;
     private String userFullName;
     private String userPhoneNumber;
+    private String apartmentId;
     private boolean isUsed;
     private LocalDateTime expirationTime;
+    private String visitorName;
 
 }

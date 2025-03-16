@@ -10,5 +10,6 @@ public class UserLoginResponse {
     private String firstName;
     private String lastName;
     private String phoneNumber;
+    private String apartmentId;
     private boolean isSuccess;
 }
